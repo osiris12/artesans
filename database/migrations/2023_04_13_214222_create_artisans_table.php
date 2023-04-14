@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('artisans', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('phone_number', 30);
+            $table->string('email', 70);
+            $table->unsignedInteger('registered_by');
             $table->timestamps();
         });
     }
