@@ -11,14 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('locations', function (Blueprint $table) {
+        Schema::create('product_images', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('artesan_id')->constrained();
-            $table->string('address');
-            $table->string('zipcode');
-            $table->unsignedInteger('city');
-            $table->unsignedInteger('state');
-            $table->unsignedInteger('country');
             $table->timestamps();
         });
     }
@@ -28,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('locations');
+        Schema::dropIfExists('product_images');
     }
 };
