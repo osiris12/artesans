@@ -19,6 +19,9 @@ return new class extends Migration
             $table->unsignedInteger('city');
             $table->unsignedInteger('state');
             $table->unsignedInteger('country');
+            $table->decimal('latitude', 10, 8);
+            $table->decimal('longitude', 11, 8);
+            $table->string('notes');
             $table->timestamps();
         });
     }

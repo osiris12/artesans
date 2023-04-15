@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('artesan_id')->constrained();
+            $table->unsignedFloat('score', 2,1);
+            $table->text('description');
             $table->timestamps();
+            $table->index(['user_id', 'artesan_id']);
         });
     }
 

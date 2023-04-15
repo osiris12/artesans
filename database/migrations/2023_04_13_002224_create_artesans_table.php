@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('artesans', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('main_image');
+            $table->string('origins');
+            $table->boolean('custom_orders');
             $table->timestamps();
         });
     }
