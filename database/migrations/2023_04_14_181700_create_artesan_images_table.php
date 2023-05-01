@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('artesan_images', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('artesan_id')->constrained();
             $table->string('name');
             $table->string('type');
             $table->unsignedInteger('size');
