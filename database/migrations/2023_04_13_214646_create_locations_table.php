@@ -16,9 +16,9 @@ return new class extends Migration
             $table->foreignId('artesan_id')->constrained();
             $table->string('address');
             $table->string('zipcode');
-            $table->unsignedInteger('city');
-            $table->unsignedInteger('state');
-            $table->unsignedInteger('country');
+            $table->foreignId('city_id');
+            $table->foreignId('state_id');
+            $table->foreignId('country_id');
             $table->decimal('latitude', 10, 8);
             $table->decimal('longitude', 11, 8);
             $table->string('notes');
