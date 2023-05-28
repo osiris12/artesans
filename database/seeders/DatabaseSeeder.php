@@ -15,6 +15,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Artesan::factory(50)->create();
-        Location::factory(50)->create();
+        Location::factory(100)->create();
     }
 }
