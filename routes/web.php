@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Artesans\Artesan;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -35,4 +36,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/test', function() {
+//    dd(Artesan::all());
+    return Inertia::render('Home', [
+        'artesans' => Artesan::all(),
+    ]);
+});
+
 require __DIR__.'/auth.php';
+
