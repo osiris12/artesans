@@ -55,7 +55,7 @@ export default function Map() {
 
   return (
     <>
-      <div id="map"></div>
+      <div id="map" className="absolute h-3/6 w-full bottom-0 lg:right-0 lg:h-full lg:w-3/6"></div>
     </>
   )
 }

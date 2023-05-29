@@ -24,8 +24,8 @@ class LocationFactory extends Factory
             'artesan_id' => $this->faker->numberBetween(1, 49),
             'address' => $this->faker->address,
             'zipcode' => $this->faker->postcode,
-            'city_id' => $this->faker->numberBetween(1,10),
-            'state_id' => $this->faker->numberBetween(1,10),
+            'city_id' => $this->faker->numberBetween(1, 10),
+            'state_id' => $this->faker->numberBetween(1, 10),
             'country_id' => 1,
             'latitude' => $randomLatitude,
             'longitude' => $randomLongitude,
@@ -35,10 +35,10 @@ class LocationFactory extends Factory
 
     public function generateRandomCoordinate(): array
     {
-        $minLat = 21.824634; // These coordinates are
-        $maxLat = 21.943393; //  for the city of
-        $minLng = -102.346075; // Aguascalientes
-        $maxLng = -102.231029;
+        $minLat = 17.714403; // South
+        $maxLat = 27.765895; // North
+        $minLng = -105.016875; // West
+        $maxLng = -97.701979; // East
 
         $randomLat = mt_rand($minLat * 1000000, $maxLat * 1000000) / 1000000;
         $randomLng = mt_rand($minLng * 1000000, $maxLng * 1000000) / 1000000;
