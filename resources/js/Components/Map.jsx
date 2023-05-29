@@ -39,7 +39,7 @@ export default function Map() {
 
   const Airports = new ol.layer.Vector({
     source: new ol.source.Vector({
-      url: 'http://artesans.local/api/locations',
+      url: `${import.meta.env.VITE_APP_URL}/api/locations`,
       format: new ol.format.GeoJSON(),
     }),
     style: new ol.style.Style({
