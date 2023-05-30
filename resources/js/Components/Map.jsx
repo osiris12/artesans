@@ -46,7 +46,7 @@ export default function Map() {
       image: new ol.style.Icon({
         anchor: [0.5, 1],
         crossOrigin: 'anonymous',
-        src: 'https://docs.maptiler.com/openlayers/default-marker/marker-icon.png',
+        src: `${import.meta.env.VITE_APP_URL}/images/lele-doll-64.png`,
       })
     })
   });
