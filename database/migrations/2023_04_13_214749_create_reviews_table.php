@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('artesan_id')->constrained();
-            $table->unsignedFloat('score', 2,1);
+            $table->unsignedFloat('score', 2, 1);
             $table->text('description');
             $table->timestamps();
             $table->index(['user_id', 'artesan_id']);

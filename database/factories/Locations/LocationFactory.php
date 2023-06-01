@@ -42,6 +42,7 @@ class LocationFactory extends Factory
 
         $randomLat = mt_rand($minLat * 1000000, $maxLat * 1000000) / 1000000;
         $randomLng = mt_rand($minLng * 1000000, $maxLng * 1000000) / 1000000;
+
         return [$randomLat, $randomLng];
     }
 }

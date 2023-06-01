@@ -20,7 +20,7 @@ class LocationsController extends Controller
 
             return [
                 'properties' => [
-                     'name' => 'name',
+                    'name' => 'name',
                 ],
                 'geometry' => [
                     'coordinates' => [$lng, $lat],
