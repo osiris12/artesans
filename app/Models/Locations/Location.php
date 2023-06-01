@@ -3,6 +3,7 @@
 namespace App\Models\Locations;
 
 use App\Models\Artesans\Contact;
+use App\Models\Images\LocationImage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -25,5 +26,10 @@ class Location extends Model
     public function state(): HasOne
     {
         return $this->hasOne(State::class);
+    }
+
+    public function images(): HasMany
+    {
+        return $this->hasMany(LocationImage::class);
     }
 }

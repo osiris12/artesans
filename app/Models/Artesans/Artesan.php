@@ -15,9 +15,9 @@ class Artesan extends Model
 {
     use HasFactory;
 
-    public function image(): HasOne
+    public function images(): HasOne
     {
-        return $this->hasOne(ArtesanImage::class);
+        return $this->hasMany(ArtesanImage::class);
     }
 
     public function contacts(): HasMany
