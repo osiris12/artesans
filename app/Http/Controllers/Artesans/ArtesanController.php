@@ -35,13 +35,17 @@ class ArtesanController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     *
      */
-    public function show(Artesan $artesan)
+    public function show(Artesan $artesan): \Inertia\Response
     {
         return Inertia::render('Artesans/ArtesanProfile', [
             'artesan' => $artesan,
+            'contacts' => $artesan->contacts,
+            'images' => $artesan->images,
             'locations' => $artesan->locations,
+            'product_listing' => $artesan->productListing,
+            'reviews' => $artesan->reviews,
 
         ]);
     }

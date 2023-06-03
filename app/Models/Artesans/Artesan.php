@@ -15,14 +15,14 @@ class Artesan extends Model
 {
     use HasFactory;
 
-    public function images(): HasOne
-    {
-        return $this->hasMany(ArtesanImage::class);
-    }
-
     public function contacts(): HasMany
     {
         return $this->hasMany(Contact::class);
+    }
+
+    public function images(): HasMany
+    {
+        return $this->hasMany(ArtesanImage::class);
     }
 
     public function locations(): HasMany
