@@ -41,6 +41,8 @@ class ArtesanController extends Controller
     {
         return Inertia::render('Artesans/ArtesanProfile', [
             'artesan' => $artesan,
+            'city' => $artesan->city,
+            'state' => $artesan->state,
             'contacts' => $artesan->contacts,
             'images' => $artesan->images,
             'locations' => $artesan->locations,

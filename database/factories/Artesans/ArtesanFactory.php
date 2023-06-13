@@ -18,8 +18,10 @@ class ArtesanFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
+            'languages' => json_encode([$this->faker->languageCode]),
+            'city_id' => $this->faker->numberBetween(1, 50),
+            'state_id' => $this->faker->numberBetween(1, 32),
             'main_image' => 'default',
-            'origins' => 'Mexico',
             'custom_orders' => $this->faker->boolean,
         ];
     }
