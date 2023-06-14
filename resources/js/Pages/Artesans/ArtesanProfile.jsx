@@ -1,3 +1,5 @@
+import {Link} from "@inertiajs/react";
+
 export default function ArtesanProfile({artesan}) {
   console.log(artesan);
   const {name, city, state, reviews, contacts, images, locations} = artesan;
@@ -10,7 +12,7 @@ export default function ArtesanProfile({artesan}) {
       <div className="bg-gray-200">
         <nav className="h-20 bg-gray-900 text-white flex flex-row">
           <div className="basis-1/4 flex">
-            <div className="text-3xl self-center ml-5">Artesan</div>
+            <Link href="/" className="text-3xl self-center ml-5">Artesan</Link>
           </div>
           <div className="basis-1/4">
           </div>
@@ -19,11 +21,11 @@ export default function ArtesanProfile({artesan}) {
 
         {/* Main image */}
         <div id="profile_pic"
-             className="h-250 w-250 top-10 mx-auto inset-x-0 relative rounded-2xl z-10 drop-shadow-2xl">
+             className="h-225 w-225 top-10 mx-auto inset-x-0 relative rounded-2xl z-10 drop-shadow-2xl">
           <img src={images[5].url} alt="" className="rounded-2xl h-full w-full"/>
         </div>
 
-        <div className="bg-white relative bottom-16 rounded-3xl h-750 flex flex-col items-center">
+        <div className="bg-white relative bottom-16 rounded-3xl h-650 flex flex-col items-center">
 
           <div className="text-3xl relative top-36 font-extrabold">{name}</div>
 
@@ -53,7 +55,7 @@ export default function ArtesanProfile({artesan}) {
           {/* END Social Media */}
 
           {/* START Artesan Information */}
-          <div className="relative top-56 bg-gray-100 h-80 w-10/12 rounded-2xl">
+          <div className="relative top-56 bg-gray-100 pb-5 w-10/12 rounded-2xl">
             <div className="mt-8 ml-6 mr-6 h-3/4">
 
               <div className="flex border-b border-gray-200 pb-5 shadow-sm">
@@ -99,10 +101,10 @@ export default function ArtesanProfile({artesan}) {
         </div>
 
         {/*Image Gallery*/}
-        <div className="text-4xl flex justify-center">Products</div>
-        <div className="grid grid-cols-2 gap-2 mt-10">
+        <div className="text-4xl font-bold flex justify-center relative bottom-8">Products</div>
+        <div className="grid grid-cols-2 gap-2 justify-items-center">
           {images && images.map((image, index) => (
-            <img src={baseUrl + image.url} className="h-auto max-w-full rounded-lg p-1" key={index}/>
+            <img src={baseUrl + image.url} className="h-auto max-w-xs w-full rounded-lg p-1 shadow-lg" key={index}/>
           ))}
         </div>
 

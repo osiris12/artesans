@@ -56,9 +56,9 @@ export default function NewRegister() {
                     />
                   </svg>
                 </div>
-                <span className="ml-4 text-sm">
+                <Link href="/artesans/1" className="ml-4 text-sm">
                   Sign Up with Google
-                </span>
+                </Link>
               </button>
 
             </div>
