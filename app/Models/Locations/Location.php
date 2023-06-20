@@ -13,6 +13,11 @@ class Location extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'latitude' => 'float',
+        'longitude' => 'float',
+    ];
+
     public function contacts(): HasMany
     {
         return $this->hasMany(Contact::class);

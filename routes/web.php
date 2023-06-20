@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Artesans\ArtesanController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Locations\Location;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -18,9 +19,11 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
+    $locations = Location::all();
     return Inertia::render('Home', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
+        'locations' => $locations,
     ]);
 });
 
@@ -34,6 +37,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Route::resource('artesans', ArtesanController::class);
