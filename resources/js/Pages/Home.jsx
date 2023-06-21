@@ -14,8 +14,7 @@ export default function Home({auth, locations}) {
 
   return (
     <>
-      <div
-        className="max-w-screen-xl m-0 bg-white shadow sm:rounded-lg flex justify-center items-center h-2/6 lg:justify-normal">
+      <div>
         <NewRegister/>
         <Map locations={locations}/>
       </div>

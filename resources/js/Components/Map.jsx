@@ -1,5 +1,6 @@
-import {GoogleMap, Marker} from "@react-google-maps/api";
-import {useMemo} from "react";
+import {GoogleMap, InfoWindow, Marker} from "@react-google-maps/api";
+import {useMemo, useState} from "react";
+import {Link} from "@inertiajs/react";
 
 export default function Map({locations}) {
   const center = useMemo(() => ({
@@ -12,18 +13,43 @@ export default function Map({locations}) {
     clickableIcons: false,
   }), [])
 
+  const [selectedLocation, setSelectedLocation] = useState(null);
+
+  const handleMarkerClick = (location) => {
+    setSelectedLocation(location);
+  };
+
+  const handleInfoWindowClose = () => {
+    setSelectedLocation(null);
+  };
+
 
   return (
     <>
-      {/*<div id="map" className="absolute h-3/6 w-full bottom-0 lg:right-0 lg:h-full lg:w-3/6"></div>*/}
-      <GoogleMap zoom={5} center={center} options={options}
-                 mapContainerClassName="absolute h-3/6 w-full bottom-0 lg:right-0 lg:h-full lg:w-3/6">
+      <GoogleMap
+        zoom={5}
+        center={center}
+        options={options}
+        mapContainerClassName="absolute h-5/6 w-full bottom-0 lg:right-0 lg:h-full lg:w-3/6"
+      >
         {locations && locations.map((location, index) => {
           let lat = location.latitude;
           let lng = location.longitude;
           return (
-            <Marker position={{lat: lat, lng: lng}} key={index}/>
-          )
+            <Marker
+              position={{lat: lat, lng: lng}}
+              key={index} clickable={true}
+              onClick={() => handleMarkerClick(location)}
+            >
+              {selectedLocation && selectedLocation === location && (
+                <InfoWindow onCloseClick={handleInfoWindowClose}>
+                  <div>
+                    <Link href={"/artesans/" + location.artesan_id}>Address: {location.address}</Link>
+                  </div>
+                </InfoWindow>
+              )}
+            </Marker>
+          );
         })}
 
       </GoogleMap>

@@ -25,8 +25,8 @@ export default function NewRegister() {
 
   return (
     <>
-      {/* Start New Form */}
-      <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
+      {/* START Wide Screen Form */}
+      <div className="hidden lg:block lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
         <div className="flex flex-col items-center">
           <h1 className="text-lg xl:text-3xl font-extrabold text-center">
             Sign up and discover local Mexican Artesans
@@ -137,7 +137,23 @@ export default function NewRegister() {
           </div>
         </div>
       </div>
-      {/* End new Form */}
+      {/* END Wide Screen Form */}
+
+      {/* START Tablet and Mobile Form */}
+      <div className="lg:hidden flex flex-col items-center justify-center">
+        <div className="text-xl mt-3">Artesans</div>
+        <div className="text-xs">Discover Handcrafted Mexican Products..</div>
+        <div className="flex flex-row mt-2 w-1/2 gap-3">
+          <PrimaryButton>
+            <Link href="/login">Login</Link>
+          </PrimaryButton>
+          <PrimaryButton className="bg-green-600">
+            <Link href="/register">Signup</Link>
+          </PrimaryButton>
+        </div>
+
+      </div>
+      {/* END Tablet and Mobile Form*/}
 
     </>
   );
