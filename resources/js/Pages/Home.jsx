@@ -15,7 +15,7 @@ export default function Home({auth, locations}) {
   return (
     <>
       {/* Sign up/Sign in Form and Buttons */}
-      <div className="mb-10">
+      <div className="pb-6 bg-green-600">
         <NewRegister/>
       </div>
 

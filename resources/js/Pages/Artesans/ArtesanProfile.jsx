@@ -9,14 +9,13 @@ export default function ArtesanProfile({artesan}) {
 
   return (
     <>
-      <div className="bg-gray-100">
-        <nav className="h-20 bg-white flex flex-col justify-center items-center">
+      <div className="bg-green-600">
+        <nav className="h-12 flex flex-col justify-center items-center">
           <div className="mt-3">
-            <Link href="/" className="text-3xl text-green-800">Artesans</Link>
+            <Link href="/" className="text-3xl text-green-100">Artesans</Link>
           </div>
           <div className="basis-1/4">
           </div>
-
         </nav>
 
         <div className="h-200 mx-auto inset-x-0 rounded-2xl drop-shadow-2xl"></div>

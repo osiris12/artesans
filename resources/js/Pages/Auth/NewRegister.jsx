@@ -140,15 +140,14 @@ export default function NewRegister() {
       {/* END Wide Screen Form */}
 
       {/* START Tablet and Mobile Form */}
-      <div className="lg:hidden flex flex-col items-center justify-center text-green-800">
+      <div className="lg:hidden flex flex-col items-center justify-center text-green-100">
         <div className="text-3xl mt-3">Artesans</div>
         <p className="text-xs mt-2 font-bold">Discover local and genuine Mexican artisans.</p>
-        <p className="text-xs">No signup required!</p>
-        <div className="flex flex-row mt-2 w-1/2 gap-3">
+        <div className="flex flex-row w-1/2 gap-3">
           <PrimaryButton>
             <Link href="/login">Login</Link>
           </PrimaryButton>
-          <PrimaryButton className="bg-green-600">
+          <PrimaryButton className="!bg-green-800">
             <Link href="/register">Signup</Link>
           </PrimaryButton>
         </div>
