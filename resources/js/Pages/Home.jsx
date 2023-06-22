@@ -14,11 +14,14 @@ export default function Home({auth, locations}) {
 
   return (
     <>
-      <div>
+      {/* Sign up/Sign in Form and Buttons */}
+      <div className="mb-10">
         <NewRegister/>
-        <Map locations={locations}/>
       </div>
-    </>
 
+      {/* Map */}
+      <Map locations={locations}/>
+
+    </>
   )
 }
