@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('name');
             $table->json('languages');
+            $table->text('bio');
             $table->foreignId('city_id')->constrained();
             $table->foreignId('state_id')->constrained();
             $table->string('main_image');
