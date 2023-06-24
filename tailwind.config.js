@@ -28,7 +28,11 @@ module.exports = {
                 '225': '225px',
                 '250': '250px',
                 '300': '300px',
-            }
+            },
+            screens: {
+                'pixel-height': {'raw': '(max-height: 640px)'},
+                // => @media (min-height: 800px) { ... }
+            },
         },
     },
 

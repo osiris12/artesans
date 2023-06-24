@@ -4,7 +4,7 @@ import {Link} from "@inertiajs/react";
 
 export default function Map({locations}) {
   const center = useMemo(() => ({
-    lat: 6.083148,
+    lat: 18.083148,
     lng: -101.296260,
   }), []);
 
@@ -23,14 +23,15 @@ export default function Map({locations}) {
     setSelectedLocation(null);
   };
 
-  function createKey(location) {
-    return location.lat + location.lng
+  const clusterOptions = {
+    averageCenter: false,
+    batchSize: 50,
   }
 
 
   return (
     <>
-      <div className="relative h-750">
+      <div className="relative pixel-height:h-[478px] h-[600px]">
         <GoogleMap
           zoom={4.2}
           center={center}
